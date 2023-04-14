@@ -22,7 +22,7 @@ on:
 
 env:
   JAVA_VERSION: '11'  
-
+  POM_XML_DIRECTORY: '.'
 
 jobs:
   analyze:
@@ -78,8 +78,7 @@ jobs:
     - name: Install Azure Functions Core Tools
       shell: bash
       run: |
-        brew tap azure/functions
-        brew install azure-functions-core-tools@4
+        npm install -g azure-functions-core-tools
 
     - name: 'Restore Project Dependencies Using Mvn'
       shell: bash
