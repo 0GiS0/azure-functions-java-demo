@@ -1,6 +1,9 @@
 {
 	"name": "Azure Functions & Java 11",
-	"dockerFile": "Dockerfile",
+	// "dockerFile": "Dockerfile",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"dockerComposeFile": "docker-compose.yaml",
+	"service": "app",
 	"forwardPorts": [
 		7071
 	],
@@ -9,13 +12,29 @@
 		// Configure properties specific to VS Code.
 		"vscode": {
 			// Set *default* container specific settings.json values on container create.
-			"settings": {},
+			"settings": {
+				"workbench.colorTheme": "Solarized Dark",
+				"mssql.connections": [
+					{
+						"server": "localhost,1433",
+						"database": "",
+						"authenticationType": "SqlLogin",
+						"user": "sa",
+						"password": "P@ssword",
+						"emptyPasswordInput": false,
+						"savePassword": true,
+						"profileName": "mssql-container"
+					}
+				]
+			},
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
+				"ms-mssql.mssql",
 				"ms-azuretools.vscode-azurefunctions",
 				"vscjava.vscode-java-pack",
 				"redhat.java",
-				"redhat.vscode-xml"
+				"redhat.vscode-xml",
+				"GitHub.vscode-github-actions"
 			]
 		}
 	},
