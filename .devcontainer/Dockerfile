@@ -2,6 +2,11 @@
 # https://github.com/Azure/azure-functions-docker/blob/dev/host/4/bullseye/amd64/java/java11/java11-core-tools.Dockerfile
 FROM mcr.microsoft.com/azure-functions/java:4-java11-core-tools
 
+# Install SQL Tools: SQLPackage and sqlcmd
+COPY mssql/installSQLtools.sh installSQLtools.sh
+RUN bash ./installSQLtools.sh \
+     && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
+
 # Uncomment following lines If you want to enable Development Container Script
 # For more details https://github.com/microsoft/vscode-dev-containers/tree/main/script-library
 

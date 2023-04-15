@@ -17,13 +17,15 @@
 				"mssql.connections": [
 					{
 						"server": "localhost,1433",
-						"database": "",
+						"database": "funcdb",
 						"authenticationType": "SqlLogin",
 						"user": "sa",
 						"password": "P@ssword",
 						"emptyPasswordInput": false,
-						"savePassword": true,
-						"profileName": "mssql-container"
+						"savePassword": false,
+						"profileName": "mssql-container",
+						"encrypt": "Mandatory",
+						"trustServerCertificate": true
 					}
 				]
 			},
@@ -34,12 +36,16 @@
 				"vscjava.vscode-java-pack",
 				"redhat.java",
 				"redhat.vscode-xml",
-				"GitHub.vscode-github-actions"
+				"GitHub.vscode-github-actions",
+				"GitHub.copilot"
 			]
 		}
 	},
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "java -version",
+	"postCreateCommand": "bash .devcontainer/mssql/postCreateCommand.sh 'P@ssword' './bin/Debug/' './.devcontainer/mssql/'",
+	"remoteEnv": {
+		"PATH": "${containerEnv:PATH}:/opt/mssql-tools/bin"
+	},
 	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode"
 }

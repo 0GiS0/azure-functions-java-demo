@@ -26,6 +26,6 @@
       "command": "extensions install",
       "problemMatcher": [],
       "label": "func: extensions install"
-    }
+    },
   ]
 }

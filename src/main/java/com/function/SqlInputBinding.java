@@ -31,9 +31,9 @@ public class SqlInputBinding {
                 HttpRequestMessage<Optional<String>> request,
             @SQLInput(
                 name = "result",
-                commandText = "SELECT * FROM $object$",
+                commandText = "SELECT * FROM Products",
                 commandType = "Text",
-                connectionStringSetting = "$SqlConnectionString$")
+                connectionStringSetting = "SqlConnectionString")
                 Object[] result) {
 
         return request.createResponseBuilder(HttpStatus.OK).header("Content-Type", "application/json").body(result).build();
