@@ -37,7 +37,8 @@
 				"redhat.java",
 				"redhat.vscode-xml",
 				"GitHub.vscode-github-actions",
-				"GitHub.copilot"
+				"GitHub.copilot",
+				"humao.rest-client"
 			]
 		}
 	},

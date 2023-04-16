@@ -1,10 +1,10 @@
-GET http://localhost:5010/api/hero HTTP/1.1
+GET http://localhost:7071/api/SqlInputBinding HTTP/1.1
 
 ###
-POST http://localhost:5010/api/hero HTTP/1.1
+POST http://localhost:7071/api/SqlOutputBinding HTTP/1.1
 content-type: application/json
 
-{
+{    
     "name": "Ergonomic mouse",
     "description": "Ergonomic mouse",
     "price": 10.99
