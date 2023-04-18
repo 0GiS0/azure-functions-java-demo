@@ -38,7 +38,9 @@
 				"redhat.vscode-xml",
 				"GitHub.vscode-github-actions",
 				"GitHub.copilot",
-				"humao.rest-client"
+				"humao.rest-client",
+				"ms-azuretools.vscode-azurestorage",
+				"Azurite.azurite"
 			]
 		}
 	},
