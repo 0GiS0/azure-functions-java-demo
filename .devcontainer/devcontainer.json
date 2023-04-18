@@ -5,7 +5,7 @@
 	"dockerComposeFile": "docker-compose.yaml",
 	"service": "app",
 	"forwardPorts": [
-		7071
+		7071	
 	],
 	// Configure tool-specific properties.
 	"customizations": {
@@ -39,8 +39,7 @@
 				"GitHub.vscode-github-actions",
 				"GitHub.copilot",
 				"humao.rest-client",
-				"ms-azuretools.vscode-azurestorage",
-				"Azurite.azurite"
+				"ms-azuretools.vscode-azurestorage"
 			]
 		}
 	},
